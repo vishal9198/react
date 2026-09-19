@@ -1,10 +1,12 @@
+import { useState } from "react";
 import Login from "./component/Login";
 import Profile from "./component/Profile";
 import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
+  const [user, setuser] = useState(null);
   return (
-    <UserContextProvider>
+    <UserContextProvider value={{ user, setuser }}>
       <Login />
       <Profile />
     </UserContextProvider>
