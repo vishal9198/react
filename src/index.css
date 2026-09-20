@@ -1,1 +1,15 @@
 @import "tailwindcss";
+.home-active {
+  color: red;
+}
+
+.about-active {
+  color: green;
+}
+
+.contact-active {
+  color: blue;
+}
+.login-class {
+  color: pink;
+}

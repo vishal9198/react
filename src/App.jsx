@@ -1,18 +1,44 @@
 import { useState } from "react";
 import Home from "./pages/Home";
+import "./index.css";
+
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import Login from "./pages/Login";
 
 function App() {
   return (
     <BrowserRouter>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/login">Login</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "home-active" : "home")}
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? "about-active" : "about")}
+        >
+          About
+        </NavLink>
+
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? "contact-active" : "contact"
+          }
+        >
+          Contact
+        </NavLink>
+        <NavLink
+          to="/login"
+          className={({ isActive }) => (isActive ? "login-class" : "login")}
+        >
+          Login
+        </NavLink>
       </nav>
 
       <Routes>
